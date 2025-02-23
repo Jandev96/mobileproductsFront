@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import "../style/style.css"
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -11,6 +12,7 @@ const ProductList = () => {
       try {
         const response = await axios.get('/api/products');
         setProducts(response.data);
+        console.log(response)
       } catch (error) {
         console.error('Error fetching products:', error);
       }

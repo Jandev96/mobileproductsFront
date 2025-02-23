@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; // For navigation
 import '../style/style.css'; // Import the CSS file
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 const ProductForm = () => {
   const [title, setTitle] = useState('');
@@ -15,7 +16,7 @@ const ProductForm = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('/api/products', {
+      const response = await axios.post(`${backendUrl}/products`, {
         title,
         image,
         description,
