@@ -1,4 +1,3 @@
-// vite.config.js
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
@@ -7,9 +6,10 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://mobileproductsbackend.onrender.com', 
+        target: 'https://mobileproductsbackend.onrender.com', // Your backend URL
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
+        secure: false, // Allow proxying to HTTPS backend
+        rewrite: (path) => path.replace(/^\/api/, ''), // Remove /api prefix
       },
     },
   },
