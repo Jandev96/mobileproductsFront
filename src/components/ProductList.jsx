@@ -10,7 +10,7 @@ const ProductList = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('/api/products');
+        const response = await axios.get('https://mobileproductsbackend.onrender.com/products');
         setProducts(response.data);
         console.log(response)
       } catch (error) {
