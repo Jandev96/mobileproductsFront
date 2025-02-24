@@ -30,7 +30,7 @@ const ProductList = () => {
           <img src={product.image} alt={product.title} />
           <h3>{product.title}</h3>
           <p>{product.description}</p>
-          <p className="price">Price: ${product.price}</p>
+          <p className="price">Price: <i class="fa fa-inr"> </i> {product.price}</p>
         </div>
         ))}
       </div>
